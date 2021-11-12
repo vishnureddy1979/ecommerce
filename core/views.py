@@ -241,6 +241,7 @@ class PaymentView(View):
         userprofile = UserProfile.objects.get(user=self.request.user)
         if form.is_valid():
             token = form.cleaned_data.get('stripeToken')
+            print(token)
             save = form.cleaned_data.get('save')
             use_default = form.cleaned_data.get('use_default')
 
